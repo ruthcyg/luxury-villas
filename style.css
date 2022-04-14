@@ -964,7 +964,9 @@ section#testimonials{
    /*******$$$$$$$$$$$$$$**Villas  Section*$$$$$$$$$$$$$$$$$**********/
    /*******$$$$$$$$$$$$$$**Motto Section*$$$$$$$$$$$$$$$$$**********
    .booking-content__para,
-   .motto__content--para
+   .motto__content--para,
+   section#events-content > div p[class*="para"],
+  section#features-content > div p[class*="para"],
    div[class^=villas] p[class^=villas]{
      font-size: 1.5rem;
    }
