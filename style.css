@@ -207,7 +207,7 @@ transition: all var(--transition-duration) ease-in-out;
 /* Rotating the Menu */
 .header__main-nav input[type=checkbox]:checked + 
 .header__main-nav--hamburger > div{
-/*7304820691*/
+
 transform:rotate(135deg) ;
 }
 
@@ -806,7 +806,16 @@ section#events-text,
 section#features-text {
   background-color: var(--color-tertiary);
   grid-column: col-start 10 / center-end;
+/*
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;*/
+}
 
+section#events-text,
+section#features-text,
+section#gallery-text{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -830,18 +839,109 @@ section#features-text {
 
 /**####****####*****Gallery Text Section******####************/
 section#gallery-text{
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   grid-column: center-start / col-end 1;
-  height:400px ;
-}
- 
-/**####****####*****Gallery carousel  Section******####************/
-section#gallery-carousel{
-  background-color: var(--color-tertiary);
-  grid-column: col-start 2 / container-end;
-  height:400px ;
+  
 }
 
+.gallery-text__content{
+  transform:rotate(-0.25turn);
+}
+ 
+
+/*@@##$$%%^^&&**@@##$$%%^^&&**^^ Gallery Carousel Section ^^**@@##$$%%^^&&**@@##$$%%^^&&*/
+section#gallery-carousel {
+  grid-column: col-start 2 / container-end;
+  height: 90vh;
+  overflow: hidden;
+  border: solid 0.2rem var(--color-secondary);
+  position: relative;
+}
+
+/* Image Container */
+div.gallery-carousel__img-container {
+  /* background-color: lawngreen; */
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* Image Container List (UL) */
+.gallery-carousel__img-container--list {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: transform var(--transition-duration) ease-in-out;
+}
+
+/* Image Container List Items (LIs) */
+.gallery-carousel__img-container--list__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Carousel Images */
+.gallery-carousel__img-container--list__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Carousel Buttons */
+.gallery-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Button Right */
+.gallery-carousel__btn--right {
+  right: 0;
+}
+
+/* Carousel Nav */
+.gallery-carousel__nav {
+  /* background-color: red; */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 5%;
+  transform: translateX(-50%);
+  margin-bottom: 1rem;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 3rem;
+}
+
+/* Carousel Nav Buttons */
+.gallery-carousel__nav--btn {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  border: none;
+  cursor: pointer;
+}
+
+/* Current Button/Image */
+.current--img {
+  background-color: var(--color-primary);
+}
+
+/* To hide the arrows */
+.hidden {
+  display: none;
+}
 /**####****####*****Feature Content  Section******####************/
 section#features-content{
   background-color: var(--color-primary);
