@@ -1192,6 +1192,12 @@ background-image: url("img/Testimonials/testimonials-1.jpg");
     gap:0;
   }
   
+  /********************FOOTER SECTION********************************/
+  footer#footer{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 3rem;
+  }
 }
 
 
